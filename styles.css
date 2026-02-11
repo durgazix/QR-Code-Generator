@@ -173,11 +173,88 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 150px;
+    min-height: 260px;
     padding: 20px;
     background: #fafafa;
     border: 1px solid #e0e0e0;
     border-radius: 4px;
+}
+
+.qr-design {
+    --qr-size: 256px;
+    width: min(100%, calc(var(--qr-size) + 56px));
+}
+
+.qr-shell {
+    background: #000;
+    border-radius: 28px;
+    padding: 14px;
+}
+
+.qr-inner {
+    background: #fff;
+    border-radius: 16px;
+    padding: 14px;
+}
+
+.qr-inner canvas,
+.qr-inner img {
+    display: block;
+    width: var(--qr-size);
+    height: var(--qr-size);
+    image-rendering: pixelated;
+    border-radius: 4px;
+}
+
+.scan-pill {
+    margin-top: 18px;
+    background: #000;
+    color: #fff;
+    border-radius: 999px;
+    min-height: 108px;
+    display: flex;
+    align-items: center;
+    padding: 14px 20px;
+    gap: 18px;
+}
+
+.scan-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: #fff;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.scan-icon::before {
+    content: "";
+    position: absolute;
+    top: 14px;
+    left: 19px;
+    width: 34px;
+    height: 46px;
+    border-radius: 8px;
+    background: #000;
+}
+
+.scan-icon::after {
+    content: "";
+    position: absolute;
+    left: 33px;
+    bottom: 13px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #fff;
+}
+
+.scan-text {
+    font-size: clamp(1.35rem, 5vw, 2.1rem);
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    line-height: 1;
+    white-space: nowrap;
 }
 
 .empty-state {
@@ -208,5 +285,29 @@ button {
 
     .button-group {
         flex-direction: column;
+    }
+
+    .scan-pill {
+        min-height: 92px;
+        padding: 12px 16px;
+    }
+
+    .scan-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .scan-icon::before {
+        top: 12px;
+        left: 16px;
+        width: 28px;
+        height: 38px;
+    }
+
+    .scan-icon::after {
+        left: 27px;
+        bottom: 11px;
+        width: 7px;
+        height: 7px;
     }
 }
