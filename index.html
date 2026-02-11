@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro QR Code Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>QR Code Generator</h1>
+
+        <div class="input-group">
+            <label for="urlInput">Enter URL</label>
+            <input type="text" id="urlInput" placeholder="https://example.com">
+        </div>
+
+        <div class="controls">
+            <div class="control-row">
+                <label>Size:</label>
+                <input type="range" id="sizeRange" min="128" max="512" value="256" step="32">
+                <span id="sizeValue" class="size-value">256px</span>
+            </div>
+
+            <div class="color-row">
+                <div class="color-item">
+                    <label>Foreground:</label>
+                    <input type="color" id="fgColor" value="#000000">
+                </div>
+                <div class="color-item">
+                    <label>Background:</label>
+                    <input type="color" id="bgColor" value="#ffffff">
+                </div>
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button class="btn-generate" onclick="generateQR()">Generate QR</button>
+            <button class="btn-download" id="downloadBtn" onclick="downloadQR()" disabled>Download</button>
+        </div>
+
+        <div id="qrContainer">
+            <div class="empty-state">QR code will appear here</div>
+        </div>
+
+        <div id="errorMsg"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+    <script src="https://unpkg.com/qrcode@1.5.3/build/qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
